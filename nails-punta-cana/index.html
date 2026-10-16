@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Nails Punta Cana · Uñas en Bávaro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2b2230;--soft:#6d6170;--rose:#c98b8b;--gold:#b8945a;--bg:#fbf7f4;--card:#fff;--line:#eadfd8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Jost,sans-serif;font-weight:300;color:var(--ink);background:var(--bg);line-height:1.7;overflow-x:hidden}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:var(--rose);border-radius:8px}
+.demo{background:var(--ink);color:#fff;text-align:center;font-size:.8rem;padding:.45rem 1rem;letter-spacing:.04em}
+nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:1rem 6vw;background:rgba(251,247,244,.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:.12em}
+nav ul{display:flex;gap:2rem;list-style:none}nav a{color:var(--ink);text-decoration:none;font-size:.9rem;letter-spacing:.08em}
+nav a:hover{color:var(--rose)}
+@media(max-width:720px){nav ul{display:none}}
+.hero{min-height:92vh;display:grid;place-items:center;text-align:center;padding:4rem 6vw;position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;will-change:transform}
+.o1{width:420px;height:420px;background:#f1c9c4;top:-80px;left:-100px}
+.o2{width:360px;height:360px;background:#ead7b8;bottom:-60px;right:-80px}
+.hero .in{position:relative;max-width:820px}
+.kicker{letter-spacing:.35em;text-transform:uppercase;font-size:.75rem;color:var(--gold)}
+h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2.8rem,8vw,6rem);line-height:1.02;margin:1rem 0}
+h1 em{color:var(--rose)}
+.hero p{font-size:1.15rem;color:var(--soft);max-width:560px;margin:0 auto 2.2rem}
+.btn{display:inline-block;padding:1rem 2.2rem;border-radius:99px;background:var(--ink);color:#fff;text-decoration:none;letter-spacing:.08em;font-size:.9rem;transition:.35s}
+.btn:hover{background:var(--rose);transform:translateY(-3px);box-shadow:0 14px 30px rgba(201,139,139,.35)}
+.stars{margin-top:2.2rem;font-size:.95rem;color:var(--soft)}.stars b{color:var(--gold);font-weight:500}
+section{padding:7rem 6vw;max-width:1200px;margin:0 auto}
+h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;margin-bottom:1.2rem}
+.lead{color:var(--soft);max-width:640px;font-size:1.08rem}
+.stats{display:flex;gap:4rem;flex-wrap:wrap;margin-top:3rem}
+.stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:3.4rem;font-weight:500;color:var(--rose);line-height:1}
+.stat span{font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.4rem;margin-top:3rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:2.2rem 1.8rem;transition:.4s cubic-bezier(.2,.8,.2,1)}
+.card:hover{transform:translateY(-8px) rotate(-.4deg);box-shadow:0 24px 50px rgba(43,34,48,.08)}
+.card i{font-style:normal;font-size:1.8rem}
+.card h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;margin:.6rem 0 .3rem}
+.card p{color:var(--soft);font-size:.95rem}
+.band{background:var(--ink);color:#fff;border-radius:32px;padding:5rem 6vw;text-align:center;margin:0 4vw}
+.band h2{color:#fff}.band p{color:#d9cfd6;max-width:620px;margin:0 auto 2rem}
+.band .btn{background:var(--rose)}
+.quotes{columns:3 280px;column-gap:1.4rem;margin-top:3rem}
+.q{break-inside:avoid;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:1.8rem;margin-bottom:1.4rem}
+.q p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;line-height:1.45}
+.q small{display:block;margin-top:1rem;color:var(--gold);letter-spacing:.1em;font-size:.75rem;text-transform:uppercase}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+.info div{padding:1.2rem 0;border-bottom:1px solid var(--line)}.info span{display:block;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+form{display:grid;gap:1rem}
+input,textarea{font:inherit;padding:1rem 1.2rem;border:1px solid var(--line);border-radius:14px;background:#fff}
+footer{text-align:center;padding:3rem 6vw;color:var(--soft);font-size:.85rem;border-top:1px solid var(--line)}
+.wa{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 25px rgba(0,0,0,.2);z-index:30;color:#fff;font-size:1.6rem;text-decoration:none}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo">Propuesta de diseño · demo preparada para Nails Punta Cana</div>
+<nav><div class="logo">NAILS&nbsp;PUNTA&nbsp;CANA</div><ul><li><a href="#club">El club</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#opiniones">Opiniones</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
+
+<header class="hero">
+  <div class="orb o1" data-px="0.25"></div><div class="orb o2" data-px="-0.2"></div>
+  <div class="in rv">
+    <div class="kicker">Nails · Bávaro, Punta Cana</div>
+    <h1>Uñas que <em>duran todas tus vacaciones</em></h1>
+    <p>Manicura, pedicura, extensiones y masaje con Ruby: higiene 10/10, resultados naturales y citas que se adaptan a tu agenda.</p>
+    <a class="btn" href="https://wa.me/18294690918?text=Hola%2C%20quiero%20reservar%20una%20cita">Reservar por WhatsApp</a>
+    <div class="stars"><b>★ 5,0</b> · 86 reseñas en Google</div>
+  </div>
+</header>
+
+<section id="club">
+  <div class="rv">
+    <div class="kicker">El salón</div>
+    <h2>Limpio, delicado<br>y hecho a tu medida</h2>
+    <p class="lead">Aquí te hacen exactamente lo que pides: si quieres unas extensiones cortas y naturales, sales con eso. Muchas clientas vienen de vacaciones, se hacen las uñas dos veces durante el viaje y vuelven a casa con ellas perfectas.</p>
+  </div>
+  <div class="stats rv">
+    <div class="stat"><b data-count="5" data-dec="1">0</b><span>Nota en Google</span></div>
+    <div class="stat"><b data-count="86">0</b><span>Reseñas</span></div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="rv"><div class="kicker">Servicios</div><h2>Todo lo que necesitas,<br>sin cambiar de salón</h2></div>
+  <div class="grid">
+    <div class="card rv"><i>💅</i><h3>Manicura</h3><p>Formas y acabados bonitos, que aguantan.</p></div>
+    <div class="card rv"><i>🦶</i><h3>Pedicura</h3><p>Delicada y con higiene impecable.</p></div>
+    <div class="card rv"><i>✨</i><h3>Extensiones</h3><p>Cortas y naturales, o como las quieras.</p></div>
+    <div class="card rv"><i>🌿</i><h3>Masaje</h3><p>Para completar tu rato de descanso.</p></div>
+  </div>
+</section>
+
+<div class="band rv">
+  <h2>¿Estás de vacaciones?</h2>
+  <p>Las citas se adaptan a tus horarios, para que llegues con las uñas perfectas a la playa, a la cena o a la boda.</p>
+  <a class="btn" href="https://wa.me/18294690918?text=Hola%2C%20quiero%20una%20cita">Pedir cita</a>
+</div>
+
+<section id="opiniones">
+  <div class="rv"><div class="kicker">Opiniones</div><h2>Lo que cuentan las clientas</h2></div>
+  <div class="quotes">
+    <div class="q rv"><p>"100% recomendado, higiene 10/10, súper limpio y delicado. Ya llevo 3 servicios y sigo encantada."</p><small>Reseña de Google</small></div>
+    <div class="q rv"><p>"Estuve de visita durante dos semanas y decidí hacer mi mantenimiento en este salón. Estoy muy contenta de haberlo hecho. La dueña es increíblemente amable."</p><small>Reseña de Google</small></div>
+    <div class="q rv"><p>"Pedí extensiones cortas y lograron exactamente lo que quería: un resultado natural, limpio y nada exagerado."</p><small>Reseña de Google</small></div>
+    <div class="q rv"><p>"Ruby es un encanto. Vine a hacerme la manicura y la pedicura con ella y quedé muy impresionada."</p><small>Reseña de Google</small></div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="contact">
+    <div class="rv">
+      <div class="kicker">Contacto</div><h2>Reserva tu cita</h2>
+      <div class="info">
+        <div><span>Dirección</span>Av. Alemania, Bávaro · Punta Cana</div>
+        <div><span>Teléfono / WhatsApp</span><a href="tel:+18294690918" style="color:inherit">+1 829 469 0918</a></div>
+        <div><span>Instagram</span><a href="https://www.instagram.com/nails_punta_cana" style="color:inherit">@nails_punta_cana</a></div>
+      </div>
+    </div>
+    <form class="rv" onsubmit="event.preventDefault();location.href='https://wa.me/18294690918?text='+encodeURIComponent('Hola, soy '+this.n.value+'. '+this.m.value)">
+      <input name="n" placeholder="Tu nombre" required>
+      <textarea name="m" rows="4" placeholder="¿Qué servicio te interesa y qué día?" required></textarea>
+      <button class="btn" style="border:0;cursor:pointer">Enviar por WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<footer>© <span id="y"></span> Nails Punta Cana · Bávaro, Punta Cana</footer>
+<a class="wa" href="https://wa.me/18294690918" aria-label="WhatsApp">✆</a>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;const sibs=[...el.parentElement.children].filter(c=>c.classList.contains('rv'));el.style.transitionDelay=(sibs.indexOf(el)*90)+'ms';el.classList.add('on');el.querySelectorAll('[data-count]').forEach(count);io.unobserve(el)}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+function count(b){const t=parseFloat(b.dataset.count),d=+b.dataset.dec||0,s=performance.now();(function f(n){const p=Math.min((n-s)/1400,1),v=t*(1-Math.pow(1-p,3));b.textContent=v.toFixed(d).replace('.',',');if(p<1)requestAnimationFrame(f)})(s)}
+const px=document.querySelectorAll('[data-px]');addEventListener('scroll',()=>{const y=scrollY;px.forEach(o=>o.style.transform=`translateY(${y*o.dataset.px}px)`)},{passive:true});
+</script>
+</body>
+</html>
