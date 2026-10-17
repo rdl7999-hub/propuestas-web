@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>NL Health Club · Natación, danza y deporte en Santo Domingo Este</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f3a46;--soft:#4f6f78;--aqua:#0fb3c4;--deep:#087e8f;--coral:#ff7a59;--sun:#ffc94a;--bg:#f3fbfc;--card:#fff;--line:#d6edf0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Nunito,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;overflow-x:hidden}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:var(--aqua);border-radius:8px}
+.demo{background:var(--ink);color:#fff;text-align:center;font-size:.8rem;padding:.45rem 1rem;letter-spacing:.04em}
+nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:1rem;padding:.9rem 6vw;background:rgba(243,251,252,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .logo{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.4rem;color:var(--deep)}
+nav .logo span{color:var(--coral)}
+nav ul{display:flex;gap:1.8rem;list-style:none;margin-left:auto}nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.92rem}
+nav a:hover{color:var(--coral)}
+.lang{background:#fff;border:1px solid var(--line);color:var(--ink);padding:.35rem .9rem;border-radius:99px;cursor:pointer;font:inherit;font-size:.8rem;font-weight:700}
+@media(max-width:760px){nav ul{display:none}.lang{margin-left:auto}}
+.hero{position:relative;min-height:90vh;display:grid;place-items:center;text-align:center;padding:4rem 6vw 9rem;overflow:hidden;background:linear-gradient(180deg,#d9f6f8 0%,var(--bg) 70%)}
+.bub{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,rgba(15,179,196,.25));animation:rise 12s linear infinite;opacity:.7}
+@keyframes rise{from{transform:translateY(0)}to{transform:translateY(-110vh)}}
+.waves{position:absolute;left:0;right:0;bottom:0;height:140px}
+.waves svg{position:absolute;bottom:0;width:200%;height:100%;animation:drift 14s linear infinite}
+.waves svg:nth-child(2){animation-duration:22s;opacity:.6}
+@keyframes drift{to{transform:translateX(-50%)}}
+.hero .in{position:relative;z-index:2;max-width:820px}
+.kicker{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:99px;padding:.35rem 1rem;font-size:.78rem;font-weight:700;letter-spacing:.08em;color:var(--deep);text-transform:uppercase}
+h1{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(2.7rem,8vw,5.8rem);line-height:1;margin:1.1rem 0}
+h1 em{font-style:normal;color:var(--coral)}
+.hero p{font-size:1.15rem;color:var(--soft);max-width:600px;margin:0 auto 2.2rem}
+.btn{display:inline-block;padding:1rem 2.1rem;border-radius:99px;background:var(--coral);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;transition:.3s;border:0;cursor:pointer;font-family:inherit;box-shadow:0 10px 24px rgba(255,122,89,.3)}
+.btn:hover{transform:translateY(-3px) scale(1.02);background:#ff6740}
+.rate{margin-top:1.8rem;color:var(--soft);font-weight:600}.rate b{color:#e0a100}
+section{padding:6.5rem 6vw;max-width:1200px;margin:0 auto}
+h2{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.08;margin:.8rem 0 1.1rem}
+.lead{color:var(--soft);max-width:660px;font-size:1.08rem}
+.stats{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:2.6rem}
+.stat{background:#fff;border:1px solid var(--line);border-radius:22px;padding:1.4rem 1.8rem;min-width:150px}
+.stat b{display:block;font-family:'Baloo 2',sans-serif;font-size:2.8rem;font-weight:800;color:var(--aqua);line-height:1}
+.stat span{font-size:.85rem;font-weight:700;color:var(--soft)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.2rem;margin-top:2.8rem}
+.card{background:var(--card);border-radius:26px;padding:2rem 1.6rem;border:2px solid transparent;box-shadow:0 8px 24px rgba(15,58,70,.06);transition:.35s cubic-bezier(.2,.8,.2,1)}
+.card:hover{transform:translateY(-8px) rotate(-1deg);border-color:var(--aqua)}
+.card i{font-style:normal;font-size:2.2rem;display:grid;place-items:center;width:64px;height:64px;border-radius:20px;background:#e3f7f9}
+.card:nth-child(even) i{background:#ffece6}
+.card h3{font-family:'Baloo 2',sans-serif;font-size:1.45rem;font-weight:700;margin:.9rem 0 .2rem}
+.card p{color:var(--soft);font-size:.95rem}
+.card .pr{margin-top:.9rem;font-size:.82rem;font-weight:700;color:var(--deep)}
+.band{background:linear-gradient(120deg,var(--deep),var(--aqua));color:#fff;border-radius:36px;padding:4.5rem 6vw;text-align:center;margin:0 4vw}
+.band p{color:#e2fbfd;max-width:620px;margin:0 auto 2rem;font-size:1.08rem}
+.band .btn{background:#fff;color:var(--deep);box-shadow:none}
+.quotes{columns:3 280px;column-gap:1.2rem;margin-top:2.8rem}
+.q{break-inside:avoid;background:#fff;border-radius:24px;padding:1.7rem;margin-bottom:1.2rem;box-shadow:0 8px 24px rgba(15,58,70,.06)}
+.q::before{content:"★★★★★";color:var(--sun);letter-spacing:.15em;font-size:.9rem}
+.q p{margin-top:.5rem;font-size:1.02rem}
+.q small{display:block;margin-top:.9rem;color:var(--coral);font-weight:700;font-size:.85rem}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+.info div{padding:1rem 0;border-bottom:1px dashed var(--line)}.info span.t{display:block;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--deep);font-weight:800}
+.info a{color:inherit}
+form{display:grid;gap:1rem;background:#fff;padding:2rem;border-radius:26px;box-shadow:0 8px 24px rgba(15,58,70,.06)}
+input,textarea{font:inherit;padding:1rem 1.2rem;border:2px solid var(--line);border-radius:16px;background:var(--bg)}
+input:focus,textarea:focus{outline:none;border-color:var(--aqua)}
+footer{text-align:center;padding:3rem 6vw;color:var(--soft);font-size:.88rem}
+.wa{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 25px rgba(0,0,0,.2);z-index:30;color:#fff;font-size:1.6rem;text-decoration:none}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.bub,.waves svg{animation:none}}
+</style>
+</head>
+<body>
+<div class="demo" data-es="Propuesta de diseño · demo preparada para NL Health Club" data-en="Design proposal · demo prepared for NL Health Club"></div>
+<nav><div class="logo">NL <span>Health</span> Club</div>
+<ul><li><a href="#club" data-es="El club" data-en="The club"></a></li><li><a href="#actividades" data-es="Actividades" data-en="Activities"></a></li><li><a href="#opiniones" data-es="Opiniones" data-en="Reviews"></a></li><li><a href="#contacto" data-es="Contacto" data-en="Contact"></a></li></ul>
+<button class="lang" id="lang">EN</button></nav>
+
+<header class="hero">
+  <div class="bub" style="width:26px;height:26px;left:12%;bottom:-30px"></div>
+  <div class="bub" style="width:14px;height:14px;left:28%;bottom:-30px;animation-delay:-4s"></div>
+  <div class="bub" style="width:34px;height:34px;left:78%;bottom:-30px;animation-delay:-7s"></div>
+  <div class="bub" style="width:18px;height:18px;left:88%;bottom:-30px;animation-delay:-2s"></div>
+  <div class="in rv">
+    <div class="kicker" data-es="Santo Domingo Este · Para toda la familia" data-en="Santo Domingo Este · For the whole family"></div>
+    <h1 data-es="Natación, danza y deporte <em>para grandes y pequeños</em>" data-en="Swimming, dance and sport <em>for kids and grown-ups</em>"></h1>
+    <p data-es="Natación, danza y teatro, taekwondo, yoga fisioterapéutico y entrenamiento, con un equipo que te trata como familia." data-en="Swimming, dance and drama, taekwondo, therapeutic yoga and training, with a team that treats you like family."></p>
+    <a class="btn" href="https://wa.me/18098611129?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20las%20actividades" data-es="Pide información por WhatsApp" data-en="Ask on WhatsApp"></a>
+    <div class="rate"><b>★ 4,9</b> · <span data-es="41 reseñas en Google" data-en="41 Google reviews"></span></div>
+  </div>
+  <div class="waves" aria-hidden="true">
+    <svg viewBox="0 0 1440 140" preserveAspectRatio="none"><path fill="#bfeef2" d="M0 70 Q90 30 180 70 T360 70 T540 70 T720 70 T900 70 T1080 70 T1260 70 T1440 70 V140 H0Z"/></svg>
+    <svg viewBox="0 0 1440 140" preserveAspectRatio="none"><path fill="#f3fbfc" d="M0 90 Q120 60 240 90 T480 90 T720 90 T960 90 T1200 90 T1440 90 V140 H0Z"/></svg>
+  </div>
+</header>
+
+<section id="club">
+  <div class="rv">
+    <div class="kicker" data-es="El club" data-en="The club"></div>
+    <h2 data-es="Un espacio para<br>toda la familia" data-en="A place for<br>the whole family"></h2>
+    <p class="lead" data-es="En NL Health Club los niños y los adultos encuentran su actividad: desde las clases de natación, también personalizadas, hasta danza, teatro, taekwondo y yoga fisioterapéutico. Instructores capacitados, trato personalizado y un ambiente familiar donde aprender es divertido y, a la vez, un reto." data-en="At NL Health Club kids and adults find their activity: from swimming lessons, private ones included, to dance, drama, taekwondo and therapeutic yoga. Qualified instructors, personal attention and a family atmosphere where learning is fun and a challenge at the same time."></p>
+  </div>
+  <div class="stats rv">
+    <div class="stat"><b data-count="4.9" data-dec="1">0</b><span data-es="Nota en Google" data-en="Google rating"></span></div>
+    <div class="stat"><b data-count="41">0</b><span data-es="Reseñas" data-en="Reviews"></span></div>
+    <div class="stat"><b>5</b><span data-es="Disciplinas" data-en="Disciplines"></span></div>
+  </div>
+</section>
+
+<section id="actividades">
+  <div class="rv"><div class="kicker" data-es="Actividades" data-en="Activities"></div><h2 data-es="¿Qué quieres aprender?" data-en="What do you want to learn?"></h2></div>
+  <div class="grid">
+    <div class="card rv"><i>🏊</i><h3 data-es="Natación" data-en="Swimming"></h3><p data-es="Clases para niños y adultos, también personalizadas." data-en="Lessons for kids and adults, private ones too."></p><div class="pr" data-es="Consultar por WhatsApp" data-en="Ask on WhatsApp"></div></div>
+    <div class="card rv"><i>🩰</i><h3 data-es="Danza y teatro" data-en="Dance & drama"></h3><p data-es="Expresión, ritmo y confianza en el escenario." data-en="Expression, rhythm and stage confidence."></p><div class="pr" data-es="Consultar por WhatsApp" data-en="Ask on WhatsApp"></div></div>
+    <div class="card rv"><i>🥋</i><h3>Taekwondo</h3><p data-es="Disciplina, respeto y forma física." data-en="Discipline, respect and fitness."></p><div class="pr" data-es="Consultar por WhatsApp" data-en="Ask on WhatsApp"></div></div>
+    <div class="card rv"><i>🧘</i><h3 data-es="Yoga fisioterapéutico" data-en="Therapeutic yoga"></h3><p data-es="Salud integral de mente y cuerpo." data-en="Whole-body and mind wellbeing."></p><div class="pr" data-es="Consultar por WhatsApp" data-en="Ask on WhatsApp"></div></div>
+    <div class="card rv"><i>🏋️</i><h3 data-es="Entrenamientos" data-en="Training"></h3><p data-es="Entrenamiento con instructores capacitados." data-en="Workouts with qualified instructors."></p><div class="pr" data-es="Consultar por WhatsApp" data-en="Ask on WhatsApp"></div></div>
+  </div>
+</section>
+
+<div class="band rv">
+  <h2 data-es="¿Buscas actividad para tus hijos?" data-en="Looking for an activity for your kids?"></h2>
+  <p data-es="Escríbenos y te contamos los horarios de cada disciplina y cómo inscribirlos." data-en="Message us for the schedule of each discipline and how to sign them up."></p>
+  <a class="btn" href="https://wa.me/18098611129?text=Hola%2C%20quiero%20inscribir%20a%20mis%20hijos" data-es="Quiero inscribirlos" data-en="Sign them up"></a>
+</div>
+
+<section id="opiniones">
+  <div class="rv"><div class="kicker" data-es="Opiniones" data-en="Reviews"></div><h2 data-es="Lo que dicen las familias" data-en="What families say"></h2></div>
+  <div class="quotes">
+    <div class="q rv"><p>"En NL Health Club te tratan como familia. Tienen un equipo altamente capacitado y enseñan una variedad de disciplinas para mejorar la vida de grandes y pequeños. Recomendado 💯"</p><small>Jean · Google</small></div>
+    <div class="q rv"><p>"I love it!!! I recommend 100%. Excelentes en todas las disciplinas que imparten, muy pacientes, amables y profesionales con sus estudiantes. Me encantan las clases de natacion, sobre todo las personalizadas con la Srita.Tania, en verdad se centra en enseñarte y mostrarte que aprender puede ser divertido y a la vez un reto para seguir adelante. Excelente para todos, no importa la edad."</p><small>Addis · Google</small></div>
+    <div class="q rv"><p>"Los mejores. Mis hijas y yo disfrutamos mucho nuestro tiempo allí, esperamos volver pronto."</p><small>Hanoy · Google</small></div>
+    <div class="q rv"><p>"Mi hora feliz, excelente instructores y super acogedor el lugar en mi caso practico natación aquí y disfruto bastante del lugar!"</p><small>Jorge · Google</small></div>
+    <div class="q rv"><p>"Es un lugar muy bueno y familiar, donde nuestros niños pueden desarrollarse en las distintas disciplinas que imparten."</p><small>Angy · Google</small></div>
+    <div class="q rv"><p>"La mejor escuela de deportes de la zona oriental"</p><small>Milciade · Google</small></div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="contact">
+    <div class="rv">
+      <div class="kicker" data-es="Contacto" data-en="Contact"></div><h2 data-es="Ven a visitarnos" data-en="Come and visit"></h2>
+      <div class="info">
+        <div><span class="t" data-es="Dirección" data-en="Address"></span>C. San Francisco de Asís 67, Santo Domingo Este · <a href="https://www.google.com/maps/search/?api=1&query=NL+Health+Club+Santo+Domingo+Este&query_place_id=ChIJNceJu3mIr44RSpdCDzENeY8" data-es="Ver en Google Maps" data-en="Open in Google Maps"></a></div>
+        <div><span class="t" data-es="Horario" data-en="Hours"></span><span data-es="Lunes a jueves 8–11 a. m. y 3–7 p. m. · Viernes 3–6 p. m. · Sábado 7 a. m. – 12 p. m. · Domingo cerrado" data-en="Mon–Thu 8–11 am & 3–7 pm · Fri 3–6 pm · Sat 7 am – 12 pm · Sun closed"></span></div>
+        <div><span class="t">WhatsApp</span><a href="https://wa.me/18098611129">+1 809 861 1129</a></div>
+        <div><span class="t" data-es="Teléfono" data-en="Phone"></span><a href="tel:+18095941018">+1 809 594 1018</a></div>
+        <div><span class="t">Instagram</span><a href="https://www.instagram.com/nlhealthclub">@nlhealthclub</a></div>
+      </div>
+    </div>
+    <form class="rv" onsubmit="event.preventDefault();window.open('https://wa.me/18098611129?text='+encodeURIComponent('Hola, soy '+this.n.value+'. '+this.m.value),'_blank')">
+      <input name="n" data-ph-es="Tu nombre" data-ph-en="Your name" required>
+      <textarea name="m" rows="4" data-ph-es="¿Qué actividad te interesa y para quién (niño o adulto)?" data-ph-en="Which activity are you interested in, and for whom (child or adult)?" required></textarea>
+      <button class="btn" data-es="Enviar por WhatsApp" data-en="Send on WhatsApp"></button>
+    </form>
+  </div>
+</section>
+
+<footer>© <span id="y"></span> NL Health Club · Santo Domingo Este</footer>
+<a class="wa" href="https://wa.me/18098611129" aria-label="WhatsApp">✆</a>
+
+<script>
+let L='es';function setL(l){L=l;document.documentElement.lang=l;document.querySelectorAll('[data-es]').forEach(e=>e.innerHTML=e.dataset[l]);document.querySelectorAll('[data-ph-es]').forEach(e=>e.placeholder=e.dataset['ph'+l[0].toUpperCase()+l[1]]);document.getElementById('lang').textContent=l==='es'?'EN':'ES'}
+setL('es');document.getElementById('lang').onclick=()=>setL(L==='es'?'en':'es');
+document.getElementById('y').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;const sibs=[...el.parentElement.children].filter(c=>c.classList.contains('rv'));el.style.transitionDelay=(sibs.indexOf(el)*90)+'ms';el.classList.add('on');el.querySelectorAll('[data-count]').forEach(count);io.unobserve(el)}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+function count(b){const t=parseFloat(b.dataset.count),d=+b.dataset.dec||0,s=performance.now();(function f(n){const p=Math.min((n-s)/1400,1),v=t*(1-Math.pow(1-p,3));b.textContent=v.toFixed(d).replace('.',',');if(p<1)requestAnimationFrame(f)})(s)}
+</script>
+</body>
+</html>
