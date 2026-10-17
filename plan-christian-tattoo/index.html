@@ -81,10 +81,41 @@ input[type=text]:focus,textarea:focus{outline:none;border-color:var(--red2)}
 #resumen{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-align:left;font-size:.9rem;margin:0 0 18px;white-space:pre-wrap;display:none}
 footer{text-align:center;color:var(--soft);font-size:.78rem;padding:30px 0 10px}
 @media(max-width:520px){.now b{font-size:1.4rem}.step{padding:11px 12px}.step:nth-child(4){width:70%}.step i{display:none}}
+/* panel de respuestas (#panel) */
+body.admin > .wrap, body.admin > .bar{display:none}
+body.admin > #panel{display:block}
+#panel{padding-top:28px;padding-bottom:40px}
+#panel h2{font-family:Anton,sans-serif;font-weight:400;font-size:2rem;text-transform:uppercase;margin:1rem 0 .3rem}
+#panel p{color:var(--soft);margin-bottom:1rem}
+#panel form{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+#panel input{font:inherit;color:var(--ink);background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;flex:1 1 180px;min-width:0}
+#pEstado{color:var(--soft);font-size:.9rem;margin-bottom:12px}
+.tabla{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+.tabla table{border-collapse:collapse;font-size:.85rem;min-width:900px;width:100%}
+.tabla th,.tabla td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line);white-space:pre-wrap}
+.tabla th{background:var(--bg3);font-weight:600}
+.tabla tr:nth-child(even) td{background:var(--bg2)}
+@media(max-width:700px){
+  .tabla{border:0;overflow:visible}
+  .tabla table,.tabla tbody,.tabla tr,.tabla td{display:block;min-width:0;width:auto}
+  .tabla tr:first-child{display:none}
+  .tabla tr{border:1px solid var(--line);border-radius:14px;margin-bottom:14px;overflow:hidden;background:var(--bg2)}
+  .tabla tr:nth-child(even) td,.tabla td{background:none}
+  .tabla td:empty{display:none}
+  .tabla td::before{content:attr(data-label);display:block;color:var(--soft);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<section id="panel" class="wrap" hidden>
+  <div class="brand"><img src="mghand-logo.jpg" alt="MG.hand"><span><b>MG.hand</b>Panel interno</span></div>
+  <h2>Respuestas del plan</h2>
+  <p>Lo que ha elegido el cliente, la más reciente arriba. Solo con la clave del equipo.</p>
+  <form id="pForm"><input id="pClave" type="password" placeholder="Clave" autocomplete="current-password"><button class="btn main" type="submit">Ver respuestas</button></form>
+  <div id="pEstado"></div>
+  <div class="tabla" id="pTabla" hidden></div>
+</section>
 <div class="wrap">
 
 <header>
@@ -349,6 +380,9 @@ footer{text-align:center;color:var(--soft);font-size:.78rem;padding:30px 0 10px}
 (function(){
   var TEL = '18495151303';
   var KEY = 'plan-christian-v1';
+  // URL de la app web de Apps Script (automatizacion/respuestas-planes.gs). Vacía = no se guarda.
+  var HOJA = '';
+  var PLAN = 'christian-tattoo';
   var boxes = Array.prototype.slice.call(document.querySelectorAll('.opt input[type=checkbox]'));
   var nombres = {1:'Que te encuentren',2:'Que te elijan',3:'Que te sigan',4:'Que te dejen reseña'};
 
@@ -411,8 +445,60 @@ footer{text-align:center;color:var(--soft);font-size:.78rem;padding:30px 0 10px}
     if(!boxes.some(function(b){return b.checked})){
       document.getElementById('s1').scrollIntoView(); return;
     }
+    guardarEnHoja();
     window.open('https://wa.me/' + TEL + '?text=' + encodeURIComponent(texto(false)), '_blank');
   }
+
+  function guardarEnHoja(){
+    if(!HOJA) return;
+    var g = {1:[],2:[],3:[],4:[],x:[]};
+    boxes.forEach(function(b){ if(b.checked) g[b.dataset.step || 'x'].push(b.value); });
+    var d = {plan: PLAN, estudio: radio('estudio'), estudio2: document.getElementById('estudio2').value.trim(),
+      g1: g[1], g2: g[2], g3: g[3], g4: g[4], seguimiento: g.x,
+      mes: radio('mes'), ads: radio('ads'), cuando: radio('cuando'), nota: document.getElementById('nota').value.trim()};
+    try{
+      fetch(HOJA, {method:'POST', mode:'no-cors', keepalive:true, headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(d)}).catch(function(){});
+    }catch(e){}
+  }
+
+  // Panel interno: index.html#panel
+  var PK = 'plan-panel-clave';
+  function panel(){
+    var on = location.hash === '#panel';
+    document.body.classList.toggle('admin', on);
+    document.getElementById('panel').hidden = !on;
+    if(!on) return;
+    try{ var c = localStorage.getItem(PK); if(c){ document.getElementById('pClave').value = c; verRespuestas(); } }catch(e){}
+  }
+  function verRespuestas(){
+    var est = document.getElementById('pEstado'), tab = document.getElementById('pTabla');
+    var clave = document.getElementById('pClave').value.trim();
+    if(!HOJA){ est.textContent = 'Falta conectar la hoja de Google.'; return; }
+    if(!clave){ est.textContent = 'Escribe la clave.'; return; }
+    est.textContent = 'Cargando...';
+    fetch(HOJA + '?plan=' + encodeURIComponent(PLAN) + '&clave=' + encodeURIComponent(clave))
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if(d.error){ est.textContent = 'Clave incorrecta.'; tab.hidden = true; return; }
+        try{ localStorage.setItem(PK, clave); }catch(e){}
+        est.textContent = d.filas.length ? (d.filas.length + (d.filas.length === 1 ? ' respuesta' : ' respuestas')) : 'Todavía no ha respondido nadie.';
+        tab.textContent = '';
+        if(!d.filas.length){ tab.hidden = true; return; }
+        var t = document.createElement('table'), tr = document.createElement('tr');
+        d.columnas.forEach(function(c){ var th = document.createElement('th'); th.textContent = c; tr.appendChild(th); });
+        t.appendChild(tr);
+        d.filas.forEach(function(f){
+          var r = document.createElement('tr');
+          f.forEach(function(v, i){ var td = document.createElement('td'); td.textContent = v; td.setAttribute('data-label', d.columnas[i] || ''); r.appendChild(td); });
+          t.appendChild(r);
+        });
+        tab.appendChild(t); tab.hidden = false;
+      })
+      .catch(function(){ est.textContent = 'No se pudo conectar con la hoja. Prueba otra vez.'; });
+  }
+  document.getElementById('pForm').addEventListener('submit', function(e){ e.preventDefault(); verRespuestas(); });
+  addEventListener('hashchange', panel);
+  panel();
 
   cargar();
   document.addEventListener('change', pintar);
