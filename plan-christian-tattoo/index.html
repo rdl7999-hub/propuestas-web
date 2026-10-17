@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tu plan · Christian Tattoo × MG.hand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121212;--bg2:#1b1b1b;--bg3:#242424;--ink:#f4f1ec;--soft:#a29d96;--red:#e3342b;--red2:#ff5a4f;--ok:#2fbf71;--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;padding-bottom:110px}
+a{color:var(--red2)}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+header{padding:28px 0 8px;text-align:center}
+.brand{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:26px}
+.brand img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
+.brand span{font-size:.8rem;color:var(--soft);text-align:left;line-height:1.35}.brand b{color:var(--ink);display:block;font-size:.95rem}
+.kicker{color:var(--red2);font-weight:700;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(2.4rem,9vw,4.2rem);line-height:1;letter-spacing:.01em;margin:.5rem 0 .9rem;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--red)}
+.lead{color:var(--soft);max-width:600px;margin:0 auto;font-size:1.02rem}
+.now{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:28px 0 8px}
+.now div{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:14px 10px;text-align:center}
+.now b{font-family:Anton,sans-serif;font-weight:400;font-size:1.7rem;display:block;line-height:1.1}.now small{color:var(--soft);font-size:.74rem}
+/* embudo */
+.funnel{margin:34px 0 10px}
+.funnel h2,.sec h2{font-family:Anton,sans-serif;font-weight:400;font-size:1.7rem;letter-spacing:.02em;text-transform:uppercase;line-height:1.1}
+.funnel p{color:var(--soft);font-size:.95rem;margin:.3rem 0 1rem}
+.steps{display:flex;flex-direction:column;align-items:center;gap:6px}
+.step{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;background:var(--bg2);border:1px solid var(--line);transition:.35s;text-decoration:none;color:var(--ink)}
+.step:nth-child(1){width:100%}.step:nth-child(2){width:88%}.step:nth-child(3){width:76%}.step:nth-child(4){width:64%}
+.step span{font-weight:600;font-size:.92rem}.step i{font-style:normal;font-size:.75rem;color:var(--soft);white-space:nowrap}
+.step.on{background:linear-gradient(90deg,rgba(227,52,43,.22),rgba(227,52,43,.08));border-color:rgba(227,52,43,.55)}
+.step.on i{color:var(--red2)}
+/* estudios */
+.box{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:18px;margin:26px 0}
+.box h3{font-size:1.02rem;margin-bottom:.2rem}.box p{color:var(--soft);font-size:.9rem;margin-bottom:.8rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-block;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--bg3);font-size:.9rem;cursor:pointer;transition:.2s}
+.chip input:checked+span{background:var(--red);border-color:var(--red);color:#fff}
+.chip input:focus-visible+span{outline:2px solid var(--red2);outline-offset:2px}
+input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg3);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:10px}
+textarea{min-height:90px;resize:vertical}
+input[type=text]:focus,textarea:focus{outline:none;border-color:var(--red2)}
+/* secciones */
+.sec{margin:44px 0 0;scroll-margin-top:16px}
+.sec .num{color:var(--red2);font-weight:700;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase}
+.sec>p{color:var(--soft);font-size:.95rem;margin:.35rem 0 1rem}
+.opt{display:block;position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px 16px 16px 56px;margin-bottom:10px;cursor:pointer;transition:border-color .2s,background .2s,transform .2s}
+.opt:hover{border-color:rgba(255,255,255,.22)}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .box2{position:absolute;left:16px;top:17px;width:24px;height:24px;border-radius:7px;border:2px solid #5a5650;display:grid;place-items:center;transition:.2s}
+.opt .box2::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px);opacity:0;transition:.15s}
+.opt input:checked~.box2{background:var(--red);border-color:var(--red)}
+.opt input:checked~.box2::after{opacity:1}
+.opt input:focus-visible~.box2{outline:2px solid var(--red2);outline-offset:3px}
+.opt:has(input:checked){border-color:rgba(227,52,43,.6);background:#201716}
+.opt h4{font-size:1rem;font-weight:600;line-height:1.35}
+.opt p{color:var(--soft);font-size:.88rem;margin-top:.3rem}
+.opt .gain{display:block;color:var(--ink);font-size:.84rem;margin-top:.45rem}
+.opt .gain::before{content:"→ ";color:var(--red2);font-weight:700}
+.tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px;margin-left:6px;vertical-align:2px;background:rgba(47,191,113,.15);color:var(--ok)}
+.note{font-size:.8rem;color:var(--soft);border-left:2px solid var(--red);padding:.4rem .8rem;margin:.6rem 0 0}
+.reco{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;justify-content:center}
+.btn{font:inherit;font-weight:600;border-radius:10px;padding:12px 18px;cursor:pointer;border:1px solid var(--line);background:var(--bg3);color:var(--ink);transition:.2s}
+.btn:hover{border-color:rgba(255,255,255,.3)}
+.btn.main{background:var(--red);border-color:var(--red);color:#fff}
+.btn.main:hover{background:var(--red2)}
+/* barra */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(18,18,18,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+.bar small{color:var(--soft);font-size:.8rem;display:block}.bar b{font-size:1.05rem}
+.done{text-align:center;margin:48px 0 10px}
+.done h2{font-family:Anton,sans-serif;font-weight:400;font-size:2rem;text-transform:uppercase}
+.done p{color:var(--soft);max-width:520px;margin:.4rem auto 1.2rem}
+#resumen{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-align:left;font-size:.9rem;margin:0 0 18px;white-space:pre-wrap;display:none}
+footer{text-align:center;color:var(--soft);font-size:.78rem;padding:30px 0 10px}
+@media(max-width:520px){.now b{font-size:1.4rem}.step{padding:11px 12px}.step:nth-child(4){width:70%}.step i{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand"><img src="mghand-logo.jpg" alt="MG.hand"><span><b>MG.hand</b>Diseño, publicidad y arte<br>Tu contacto: Raúl</span></div>
+  <div class="kicker">Plan a medida · Christian Tattoo</div>
+  <h1>Más reseñas.<br><em>Más turistas.</em></h1>
+  <p class="lead">Christian, aquí tienes todo lo que podemos hacer para llegar a tu objetivo. Marca lo que te interese: no hay paquetes cerrados ni nada obligatorio. Cuando termines, pulsa el botón de abajo y tu selección me llega por WhatsApp. Con eso preparamos el presupuesto.</p>
+  <div class="now">
+    <div><b>5,0 ★</b><small>tu nota en Google</small></div>
+    <div><b>137</b><small>reseñas hoy</small></div>
+    <div><b>2</b><small>estudios</small></div>
+  </div>
+</header>
+
+<section class="funnel" aria-labelledby="f-t">
+  <h2 id="f-t">Cómo funciona</h2>
+  <p>Es un embudo. Cada paso alimenta al siguiente, y al final están las reseñas, que son las que te ponen arriba cuando un turista busca "tattoo Punta Cana". Cada paso se ilumina cuando marcas algo de él.</p>
+  <div class="steps">
+    <a class="step" href="#s1" data-step="1"><span>1 · Que te encuentren</span><i>Google, anuncios</i></a>
+    <a class="step" href="#s2" data-step="2"><span>2 · Que te elijan</span><i>web y perfiles</i></a>
+    <a class="step" href="#s3" data-step="3"><span>3 · Que te sigan</span><i>redes sociales</i></a>
+    <a class="step" href="#s4" data-step="4"><span>4 · Que te dejen reseña</span><i>el objetivo</i></a>
+  </div>
+</section>
+
+<div class="box">
+  <h3>¿Para qué estudio es el plan?</h3>
+  <p>El estudio de Plaza Náutica ya lo tenemos localizado. Del segundo dinos el nombre y la zona: en Google Maps no lo encontramos a tu nombre.</p>
+  <div class="chips" role="group" aria-label="Estudios">
+    <label class="chip"><input type="radio" name="estudio" value="Solo Plaza Náutica"><span>Plaza Náutica</span></label>
+    <label class="chip"><input type="radio" name="estudio" value="Solo el segundo estudio"><span>El segundo estudio</span></label>
+    <label class="chip"><input type="radio" name="estudio" value="Los dos estudios" checked><span>Los dos</span></label>
+  </div>
+  <input type="text" id="estudio2" placeholder="Segundo estudio: nombre y zona (ej. Los Corales, Friusa...)">
+</div>
+
+<!-- 1 -->
+<section class="sec" id="s1">
+  <div class="num">Paso 1</div>
+  <h2>Que te encuentren</h2>
+  <p>El turista llega a Bávaro y busca en Google Maps o le sale un anuncio en Instagram. Si no apareces ahí, no existes para él.</p>
+
+  <label class="opt"><input type="checkbox" data-step="1" data-reco value="Ficha de Google optimizada"><span class="box2"></span>
+    <h4>Ficha de Google Maps optimizada <span class="tag">clave</span></h4>
+    <p>Categorías correctas, descripción en español e inglés, servicios, horario, fotos ordenadas de tus trabajos y preguntas frecuentes respondidas.</p>
+    <span class="gain">Sales más arriba cuando buscan "tattoo near me" desde el hotel</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="1" value="Ficha de Google del segundo estudio"><span class="box2"></span>
+    <h4>Crear o verificar la ficha del segundo estudio</h4>
+    <p>Si el segundo estudio no tiene ficha propia en Google Maps, se la creamos y la verificamos a tu nombre.</p>
+    <span class="gain">Dos fichas = el doble de sitios donde aparecer y donde acumular reseñas</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="1" data-reco value="Publicaciones semanales en Google"><span class="box2"></span>
+    <h4>Publicaciones semanales en tu ficha de Google</h4>
+    <p>Cada semana, un trabajo nuevo con su texto en los dos idiomas. Google premia las fichas que se mueven.</p>
+    <span class="gain">Tu ficha se ve activa y viva, no abandonada</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="1" value="Perfil de TripAdvisor"><span class="box2"></span>
+    <h4>Perfil en TripAdvisor</h4>
+    <p>Muchos turistas buscan allí qué hacer en Punta Cana. Creamos u optimizamos tu perfil con fotos y descripción.</p>
+    <span class="gain">Un escaparate más, justo donde busca el turista</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="1" data-reco value="Anuncios en Instagram y Facebook (Meta)"><span class="box2"></span>
+    <h4>Anuncios en Instagram y Facebook</h4>
+    <p>Campañas que solo ve la gente que está en la zona de hoteles de Bávaro y Punta Cana, en inglés y en español, con tus mejores trabajos. Nosotros las montamos, las vigilamos y las ajustamos.</p>
+    <span class="gain">Te ve el turista mientras todavía está de vacaciones</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="1" value="Anuncios en TikTok"><span class="box2"></span>
+    <h4>Anuncios en TikTok</h4>
+    <p>Tus vídeos de tatuajes, mostrados como anuncio a gente de la zona. Funcionan muy bien con el público joven.</p>
+    <span class="gain">Alcance con los vídeos que ya tienes</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="1" value="Anuncios en Google"><span class="box2"></span>
+    <h4>Anuncios en Google</h4>
+    <p>Apareces el primero cuando alguien busca "tattoo Punta Cana" o "tattoo shop Bávaro".</p>
+    <span class="gain">Captas al que ya ha decidido tatuarse y solo busca dónde</span></label>
+
+  <p class="note">El dinero de los anuncios (lo que se le paga a Meta, TikTok o Google) es aparte y lo decides tú: se puede empezar con poco y subir cuando funcione.</p>
+</section>
+
+<!-- 2 -->
+<section class="sec" id="s2">
+  <div class="num">Paso 2</div>
+  <h2>Que te elijan</h2>
+  <p>Ya te encontró. Ahora compara tu estudio con otros dos o tres. Gana el que se ve más serio, tiene más trabajos que enseñar y lo pone más fácil para reservar.</p>
+
+  <label class="opt"><input type="checkbox" data-step="2" data-reco value="Web nueva profesional"><span class="box2"></span>
+    <h4>Web nueva, profesional y en dos idiomas <span class="tag">clave</span></h4>
+    <p>Rediseño completo a tu gusto: tu estilo, tus colores, tu nombre. En español y en inglés, rápida en el móvil y con reserva directa por WhatsApp.</p>
+    <span class="gain">Le das al turista la confianza que necesita para escribirte</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="2" value="Dominio propio"><span class="box2"></span>
+    <h4>Dominio propio (christiantattoo.com o el que quieras)</h4>
+    <p>Tu propia dirección web, en lugar de una dirección prestada. Tus correos también pueden ir con ese nombre.</p>
+    <span class="gain">Te ves como un estudio establecido, no como una página provisional</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="2" data-reco value="Galería de trabajos por estilo"><span class="box2"></span>
+    <h4>Galería de trabajos ordenada por estilo</h4>
+    <p>Realismo, black &amp; grey, fine line, color, retratos de mascotas... Cada estilo con sus fotos, para que el cliente vea lo que haces.</p>
+    <span class="gain">El cliente ve que dominas justo lo que quiere tatuarse</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="2" value="Formulario de reserva con detalles"><span class="box2"></span>
+    <h4>Formulario de reserva con los detalles del tatuaje</h4>
+    <p>El cliente manda la idea, el tamaño, la zona del cuerpo, la foto de referencia y los días que está en Punta Cana. Te llega todo junto por WhatsApp.</p>
+    <span class="gain">Menos ida y vuelta de mensajes, más citas cerradas</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="2" value="Una sección por estudio en la web"><span class="box2"></span>
+    <h4>Una sección por estudio</h4>
+    <p>Cada estudio con su dirección, su mapa, su horario y su botón de WhatsApp.</p>
+    <span class="gain">El cliente va al que le queda más cerca del hotel</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="2" value="Idiomas extra en la web"><span class="box2"></span>
+    <h4>Más idiomas: francés, alemán o ruso</h4>
+    <p>Además del español y el inglés, para los turistas de Europa y de Rusia que llegan a Bávaro.</p>
+    <span class="gain">Te eligen los que no encuentran a nadie que les hable en su idioma</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="2" value="SEO local"><span class="box2"></span>
+    <h4>Posicionamiento en Google (SEO local)</h4>
+    <p>Preparamos la web para que Google la entienda y la enseñe en búsquedas como "best tattoo Punta Cana", sin pagar anuncios.</p>
+    <span class="gain">Visitas que llegan solas, mes tras mes</span></label>
+</section>
+
+<!-- 3 -->
+<section class="sec" id="s3">
+  <div class="num">Paso 3</div>
+  <h2>Que te sigan</h2>
+  <p>Tus 3 cuentas (TikTok, Instagram y Facebook) trabajando juntas hacia el mismo objetivo. Tu equipo graba en el estudio y nosotros hacemos todo lo demás.</p>
+
+  <label class="opt"><input type="checkbox" data-step="3" data-reco value="Optimizar los 3 perfiles"><span class="box2"></span>
+    <h4>Optimizar tus 3 perfiles</h4>
+    <p>Biografía en los dos idiomas, enlace a la web y a WhatsApp, destacados ordenados (trabajos, cuidados, cómo reservar, opiniones), y la misma imagen en las tres.</p>
+    <span class="gain">Quien te descubre sabe en 5 segundos quién eres y cómo reservar</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="3" data-reco value="Plan de contenido mensual con guiones"><span class="box2"></span>
+    <h4>Plan de contenido mensual con guiones</h4>
+    <p>Un calendario con qué publicar cada día, y guiones cortos de qué grabar y cómo (el antes y el después, el proceso, la reacción del cliente...). Tu equipo solo tiene que darle a grabar.</p>
+    <span class="gain">Publicas con constancia sin tener que pensar qué subir</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="3" value="Edición de vídeos"><span class="box2"></span>
+    <h4>Edición de tus vídeos</h4>
+    <p>Nos mandas lo que grabáis en el estudio y lo devolvemos editado para TikTok y Reels: cortes, música, textos y subtítulos en inglés.</p>
+    <span class="gain">Vídeos con calidad de agencia, grabados con tu móvil</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="3" value="Publicación y programación"><span class="box2"></span>
+    <h4>Publicación y programación en las 3 redes</h4>
+    <p>Subimos y programamos todo, con los textos y hashtags pensados para turistas en Punta Cana.</p>
+    <span class="gain">Te olvidas de publicar: sale solo, a la hora buena</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="3" value="Diseño gráfico para redes"><span class="box2"></span>
+    <h4>Diseño gráfico para redes</h4>
+    <p>Plantillas de publicaciones e historias, portadas de destacados y flyers de promociones con tu marca.</p>
+    <span class="gain">Un perfil que se ve profesional y reconocible</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="3" value="Gestión de mensajes y comentarios"><span class="box2"></span>
+    <h4>Respuesta a comentarios y mensajes</h4>
+    <p>Contestamos comentarios y mensajes en inglés y en español, y pasamos a tu WhatsApp a los que quieren reservar.</p>
+    <span class="gain">Ningún cliente interesado se queda sin respuesta</span></label>
+
+  <p class="note">La grabación en el estudio la hace tu equipo. Nosotros planificamos, editamos y publicamos.</p>
+</section>
+
+<!-- 4 -->
+<section class="sec" id="s4">
+  <div class="num">Paso 4 · el objetivo</div>
+  <h2>Que te dejen reseña</h2>
+  <p>El cliente sale contento, pero si nadie se lo pide no deja reseña. Esto lo convierte en costumbre.</p>
+
+  <label class="opt"><input type="checkbox" data-step="4" data-reco value="QR de reseña en el estudio"><span class="box2"></span>
+    <h4>QR de reseña en el mostrador y en el espejo <span class="tag">clave</span></h4>
+    <p>Diseño de un cartel con un QR que abre directamente tu página de reseñas de Google. Uno por estudio.</p>
+    <span class="gain">Dejar la reseña le cuesta 20 segundos, recién tatuado y contento</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="4" data-reco value="Tarjeta de cuidados con QR"><span class="box2"></span>
+    <h4>Tarjeta de cuidados con QR</h4>
+    <p>Una tarjeta bilingüe con los cuidados del tatuaje, que se lleva al hotel, con el QR de reseña y tus redes. Hacemos el diseño; la impresión va aparte.</p>
+    <span class="gain">Se acuerda de ti cada vez que se pone la crema</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="4" data-reco value="WhatsApp después del tatuaje"><span class="box2"></span>
+    <h4>Mensaje de WhatsApp después del tatuaje</h4>
+    <p>Al día siguiente, un mensaje con los cuidados. A la semana, cuando ya ha curado, otro que le pide la reseña y la foto. Te dejamos los mensajes listos en inglés y en español, y si quieres te los automatizamos.</p>
+    <span class="gain">Es lo que más reseñas genera: llega cuando el cliente ya está feliz con el resultado</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="4" value="Responder todas las reseñas"><span class="box2"></span>
+    <h4>Responder a todas tus reseñas</h4>
+    <p>Respondemos a cada reseña de Google y TripAdvisor en el idioma del cliente.</p>
+    <span class="gain">Google lo premia, y el que lee ve un estudio que cuida a su gente</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="4" value="Reseñas en TripAdvisor"><span class="box2"></span>
+    <h4>Pedir reseñas también en TripAdvisor</h4>
+    <p>Añadimos TripAdvisor al QR y a los mensajes, para crecer también allí.</p>
+    <span class="gain">Reputación en las dos webs que más miran los turistas</span></label>
+
+  <label class="opt"><input type="checkbox" data-step="4" value="Fotos de clientes en redes"><span class="box2"></span>
+    <h4>Sus fotos, en tus redes</h4>
+    <p>Pedimos permiso al cliente para compartir la foto de su tatuaje ya curado, y la convertimos en publicación con su opinión.</p>
+    <span class="gain">Cada cliente contento se convierte en un anuncio que no te cuesta nada</span></label>
+
+  <p class="note">Todo con reseñas reales de clientes reales. Nada de reseñas compradas ni de regalos a cambio de reseñas: Google lo detecta y te penaliza la ficha.</p>
+</section>
+
+<!-- extra -->
+<section class="sec" id="s5">
+  <div class="num">Para saber que funciona</div>
+  <h2>Seguimiento</h2>
+  <label class="opt"><input type="checkbox" data-reco value="Informe mensual"><span class="box2"></span>
+    <h4>Informe mensual con resultados</h4>
+    <p>Cada mes: reseñas nuevas, cuántos te encontraron en Google, mensajes de WhatsApp que llegaron, resultados de los anuncios y en qué puesto sales para "tattoo Punta Cana".</p>
+    <span class="gain">Ves con números qué está funcionando y dónde va tu dinero</span></label>
+</section>
+
+<div class="reco"><button class="btn" id="reco" type="button">Marcar lo recomendado para tu objetivo</button><button class="btn" id="limpiar" type="button">Desmarcar todo</button></div>
+
+<div class="box" style="margin-top:44px">
+  <h3>¿Cuánto te gustaría invertir al mes?</h3>
+  <p>Orientativo y opcional. Sirve para ajustar el plan a lo que tú quieres gastar, no al revés. No incluye el dinero de los anuncios.</p>
+  <div class="chips" role="group" aria-label="Presupuesto mensual">
+    <label class="chip"><input type="radio" name="mes" value="Menos de 100 USD/mes"><span>Menos de 100 USD</span></label>
+    <label class="chip"><input type="radio" name="mes" value="100-300 USD/mes"><span>100 – 300 USD</span></label>
+    <label class="chip"><input type="radio" name="mes" value="300-600 USD/mes"><span>300 – 600 USD</span></label>
+    <label class="chip"><input type="radio" name="mes" value="Más de 600 USD/mes"><span>Más de 600 USD</span></label>
+    <label class="chip"><input type="radio" name="mes" value="Prefiere hablarlo"><span>Prefiero hablarlo</span></label>
+  </div>
+</div>
+
+<div class="box">
+  <h3>¿Y para los anuncios?</h3>
+  <p>Lo que se le paga a Meta, TikTok o Google, al mes. Solo si marcaste anuncios.</p>
+  <div class="chips" role="group" aria-label="Presupuesto de anuncios">
+    <label class="chip"><input type="radio" name="ads" value="Ads: menos de 100 USD/mes"><span>Menos de 100 USD</span></label>
+    <label class="chip"><input type="radio" name="ads" value="Ads: 100-300 USD/mes"><span>100 – 300 USD</span></label>
+    <label class="chip"><input type="radio" name="ads" value="Ads: más de 300 USD/mes"><span>Más de 300 USD</span></label>
+    <label class="chip"><input type="radio" name="ads" value="Ads: no sabe todavía"><span>No lo sé todavía</span></label>
+  </div>
+</div>
+
+<div class="box">
+  <h3>¿Para cuándo lo quieres en marcha?</h3>
+  <div class="chips" role="group" aria-label="Plazo">
+    <label class="chip"><input type="radio" name="cuando" value="Lo antes posible"><span>Lo antes posible</span></label>
+    <label class="chip"><input type="radio" name="cuando" value="Este mes"><span>Este mes</span></label>
+    <label class="chip"><input type="radio" name="cuando" value="Antes de temporada alta (diciembre)"><span>Antes de temporada alta</span></label>
+  </div>
+  <textarea id="nota" placeholder="¿Algo más que quieras contarnos? Lo que más te importa, ideas, dudas..."></textarea>
+</div>
+
+<div class="done">
+  <h2>¿Listo?</h2>
+  <p>Pulsa el botón y se abre WhatsApp con tu selección ya escrita. Solo tienes que enviarla, y te respondo con el presupuesto.</p>
+  <div id="resumen"></div>
+  <button class="btn main" id="enviar2" type="button">Enviar mi selección por WhatsApp</button>
+</div>
+
+<footer>Plan preparado para Christian Tattoo Punta Cana por MG.hand · Raúl</footer>
+</div>
+
+<div class="bar"><div class="wrap">
+  <div><small id="barTxt">Marca lo que te interese</small><b id="cuenta">0 elegidas</b></div>
+  <button class="btn main" id="enviar" type="button">Enviar por WhatsApp</button>
+</div></div>
+
+<script>
+(function(){
+  var TEL = '18495151303';
+  var KEY = 'plan-christian-v1';
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.opt input[type=checkbox]'));
+  var nombres = {1:'Que te encuentren',2:'Que te elijan',3:'Que te sigan',4:'Que te dejen reseña'};
+
+  function radio(n){ var r = document.querySelector('input[name="'+n+'"]:checked'); return r ? r.value : ''; }
+
+  function guardar(){
+    try{
+      localStorage.setItem(KEY, JSON.stringify({
+        sel: boxes.filter(function(b){return b.checked}).map(function(b){return b.value}),
+        estudio: radio('estudio'), mes: radio('mes'), ads: radio('ads'), cuando: radio('cuando'),
+        estudio2: document.getElementById('estudio2').value, nota: document.getElementById('nota').value
+      }));
+    }catch(e){}
+  }
+  function cargar(){
+    try{
+      var d = JSON.parse(localStorage.getItem(KEY) || 'null'); if(!d) return;
+      boxes.forEach(function(b){ b.checked = d.sel.indexOf(b.value) > -1; });
+      ['estudio','mes','ads','cuando'].forEach(function(n){
+        if(!d[n]) return;
+        document.querySelectorAll('input[name="'+n+'"]').forEach(function(r){ r.checked = r.value === d[n]; });
+      });
+      document.getElementById('estudio2').value = d.estudio2 || '';
+      document.getElementById('nota').value = d.nota || '';
+    }catch(e){}
+  }
+
+  function pintar(){
+    var n = boxes.filter(function(b){return b.checked}).length;
+    document.getElementById('cuenta').textContent = n + (n === 1 ? ' elegida' : ' elegidas');
+    var pasos = {};
+    boxes.forEach(function(b){ if(b.checked && b.dataset.step) pasos[b.dataset.step] = 1; });
+    var k = Object.keys(pasos).length;
+    document.querySelectorAll('.step').forEach(function(s){ s.classList.toggle('on', !!pasos[s.dataset.step]); });
+    document.getElementById('barTxt').textContent = n ? ('Embudo: ' + k + ' de 4 pasos cubiertos') : 'Marca lo que te interese';
+    var r = document.getElementById('resumen');
+    var t = texto(true); r.textContent = t; r.style.display = n ? 'block' : 'none';
+    guardar();
+  }
+
+  function texto(corto){
+    var L = [];
+    if(!corto) L.push('Hola Raúl, soy Christian (Christian Tattoo). Esta es mi selección para el plan:', '');
+    L.push('Estudios: ' + (radio('estudio') || '-'));
+    var e2 = document.getElementById('estudio2').value.trim(); if(e2) L.push('Segundo estudio: ' + e2);
+    var grupos = {};
+    boxes.forEach(function(b){ if(b.checked){ var g = b.dataset.step || 'x'; (grupos[g] = grupos[g] || []).push(b.value); } });
+    ['1','2','3','4','x'].forEach(function(g){
+      if(!grupos[g]) return;
+      L.push('', (g === 'x' ? 'Seguimiento' : g + '. ' + nombres[g]) + ':');
+      grupos[g].forEach(function(v){ L.push('- ' + v); });
+    });
+    var extra = [radio('mes'), radio('ads'), radio('cuando')].filter(Boolean);
+    if(extra.length){ L.push(''); extra.forEach(function(v){ L.push(v); }); }
+    var nota = document.getElementById('nota').value.trim(); if(nota) L.push('', 'Nota: ' + nota);
+    return L.join('\n');
+  }
+
+  function enviar(){
+    if(!boxes.some(function(b){return b.checked})){
+      document.getElementById('s1').scrollIntoView(); return;
+    }
+    window.open('https://wa.me/' + TEL + '?text=' + encodeURIComponent(texto(false)), '_blank');
+  }
+
+  cargar();
+  document.addEventListener('change', pintar);
+  document.addEventListener('input', function(e){ if(e.target.matches('#estudio2,#nota')) pintar(); });
+  document.getElementById('enviar').addEventListener('click', enviar);
+  document.getElementById('enviar2').addEventListener('click', enviar);
+  document.getElementById('reco').addEventListener('click', function(){ boxes.forEach(function(b){ if(b.hasAttribute('data-reco')) b.checked = true; }); pintar(); });
+  document.getElementById('limpiar').addEventListener('click', function(){ boxes.forEach(function(b){ b.checked = false; }); pintar(); });
+  pintar();
+})();
+</script>
+</body>
+</html>
