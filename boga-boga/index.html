@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Boga Boga · Santo Domingo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf4ea;--bg2:#f1e6d3;--ink:#2b1416;--soft:#6e5650;--deep:#5c1a22;--acc:#8e2430;--gold:#d79b2b;--line:rgba(43,20,22,.13)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Lato,sans-serif;font-weight:400;background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:var(--acc)}
+.demo{background:var(--deep);color:#fff;text-align:center;font-size:.8rem;padding:.45rem 1rem;font-weight:600;letter-spacing:.02em}
+nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:1rem 6vw;background:rgba(250,244,234,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;letter-spacing:.01em}.logo b{color:var(--acc)}
+nav ul{display:flex;gap:2rem;list-style:none}nav a{color:var(--soft);text-decoration:none;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}nav a:hover{color:var(--acc)}
+.lang{background:none;border:1px solid var(--line);color:var(--ink);padding:.35rem .9rem;border-radius:999px;cursor:pointer;font:inherit;font-size:.8rem}
+@media(max-width:760px){nav ul{display:none}}
+.hero{min-height:92vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;padding:4rem 6vw;background:radial-gradient(120% 90% at 50% 0%,#7a2330 0%,#3b0f15 70%);color:#faf4ea}
+.bean{position:absolute;font-size:5rem;opacity:.16}
+.b1{top:12%;left:9vw}.b2{bottom:16%;right:10vw}.b3{top:22%;right:16vw;font-size:3.4rem}
+.hero .in{position:relative;max-width:800px}
+.kicker{color:var(--acc);letter-spacing:.34em;text-transform:uppercase;font-size:.72rem;font-weight:700}
+.hero .kicker{color:#e9b54a}
+h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(3rem,10vw,6.4rem);line-height:.98;margin:1rem 0}
+h1 em{font-style:italic;font-weight:400;font-size:.4em;color:#e9b54a;display:block;line-height:1.25;margin-top:.6rem}
+.hero p{color:#e6d3c6;max-width:580px;margin:0 auto 2.2rem;font-size:1.1rem}
+.btn{display:inline-block;background:var(--acc);color:#fff;padding:1rem 2.2rem;text-decoration:none;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.84rem;border-radius:2px;transition:.3s}
+.btn:hover{background:var(--deep);transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.25)}
+.btn.ghost{background:transparent;color:var(--acc);border:2px solid var(--acc)}.btn.ghost:hover{background:var(--acc);color:#fff}
+.rate{margin-top:2rem;color:#e6d3c6}.rate b{color:var(--gold)}
+section{padding:6.5rem 6vw;max-width:1180px;margin:0 auto}
+h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.2rem,6vw,3.8rem);line-height:1.05;margin:.6rem 0 1.4rem}
+.lead{color:var(--soft);max-width:640px;font-size:1.06rem}
+.split{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center}@media(max-width:820px){.split{grid-template-columns:1fr}}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.stat{background:var(--bg2);padding:2rem 1rem;text-align:center}.stat b{font-family:'Playfair Display',serif;font-weight:700;font-size:2.6rem;color:var(--acc);display:block;line-height:1.05}.stat span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.menu{margin-top:3rem;border-top:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1.6rem 0;border-bottom:1px solid var(--line);transition:.35s}
+.row:hover{padding-left:1rem;color:var(--acc)}
+.row h3{font-family:'Playfair Display',serif;font-weight:700;font-size:1.45rem}.row p{color:var(--soft);font-size:.95rem}
+.row .pr{font-size:.95rem;color:var(--acc);white-space:nowrap;font-weight:700}
+@media(max-width:560px){.row{flex-direction:column;gap:.3rem}}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:3rem}
+.q{background:var(--bg2);border-top:4px solid var(--gold);padding:1.8rem;border-radius:2px;transition:.35s}.q:hover{transform:translateY(-6px)}
+.q p{font-size:1.02rem;line-height:1.6;font-style:italic}.q small{display:block;margin-top:1rem;color:var(--acc);letter-spacing:.14em;font-size:.72rem;text-transform:uppercase;font-weight:700}
+.info div{padding:1.2rem 0;border-bottom:1px solid var(--line)}.info span.k{display:block;color:var(--acc);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+.info a{color:inherit}
+form{display:grid;gap:1rem}input,textarea{font:inherit;color:var(--ink);background:var(--bg2);border:1px solid var(--line);padding:1rem 1.2rem;border-radius:10px}
+footer{text-align:center;color:var(--soft);padding:3rem;border-top:1px solid var(--line);font-size:.85rem}
+.wa{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:1.6rem;text-decoration:none;z-index:30;box-shadow:0 10px 25px rgba(0,0,0,.25)}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div class="demo" data-es="Propuesta de diseño · demo preparada para Boga Boga" data-en="Design proposal · demo prepared for Boga Boga"></div>
+<nav><div class="logo">Boga <b>Boga</b></div>
+<ul><li><a href="#lugar" data-es="El lugar" data-en="The place"></a></li><li><a href="#carta" data-es="La carta" data-en="Menu"></a></li><li><a href="#opiniones" data-es="Opiniones" data-en="Reviews"></a></li><li><a href="#contacto" data-es="Contacto" data-en="Contact"></a></li></ul>
+<button class="lang" id="lang">EN</button></nav>
+
+<header class="hero">
+  <div class="bean b1" data-px=".28">🥘</div><div class="bean b2" data-px="-.22">🫒</div><div class="bean b3" data-px=".18">✦</div>
+  <div class="in rv">
+    <div class="kicker" data-es="Cocina española · Santo Domingo" data-en="Spanish cuisine · Santo Domingo"></div>
+    <h1>Boga Boga<em data-es="paella, cocido, jamón y vino, todos los días de 11 a 11" data-en="paella, stew, jamón and wine, every day from 11 to 11"></em></h1>
+    <p data-es="Un clásico de la Simón Bolívar con decoración española de toda la vida y luz tenue. Para comer en familia, celebrar un cumpleaños, una cita o cerrar un negocio." data-en="A Simón Bolívar classic with old-school Spanish décor and warm, low light. For family meals, birthdays, a date night or closing a deal."></p>
+    <a class="btn" href="https://wa.me/18094720950" data-es="Reservar mesa por WhatsApp" data-en="Book a table on WhatsApp"></a>
+    <div class="rate"><b>★ 4,7</b> · <span data-es="3.071 reseñas en Google" data-en="3,071 Google reviews"></span></div>
+  </div>
+</header>
+
+<section id="lugar">
+  <div class="split">
+    <div class="rv"><div class="kicker" data-es="El lugar" data-en="The place"></div>
+      <h2 data-es="Un clásico&lt;br&gt;de la ciudad" data-en="A city&lt;br&gt;classic"></h2>
+      <p class="lead" data-es="Sus clientes hablan de un ambiente acogedor, con una decoración clásica española llena de detalles, servicio atento y poca espera para la comida. Hay área de fumadores, un bar de postres y fútbol español en las pantallas." data-en="Guests describe a cozy room with classic Spanish décor full of details, attentive service and little wait for the food. There&#x27;s a smoking area, a dessert bar and Spanish football on the screens."></p></div>
+    <div class="stats rv">
+      <div class="stat"><b data-count="4.7" data-dec="1">0</b><span data-es="Nota Google" data-en="Google rating"></span></div>
+      <div class="stat"><b data-count="3071" data-sep="1">0</b><span data-es="Reseñas" data-en="Reviews"></span></div>
+      <div class="stat"><b data-es="11 a 11" data-en="11 to 11"></b><span data-es="Todos los días" data-en="Every day"></span></div>
+      <div class="stat"><b data-es="Fumadores" data-en="Smoking"></b><span data-es="Área propia" data-en="Area available"></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="carta">
+  <div class="rv"><div class="kicker" data-es="La carta" data-en="Menu"></div><h2 data-es="De la cocina" data-en="From the kitchen"></h2>
+  <p class="lead" data-es="Precios actualizados por WhatsApp. Esto es una muestra de lo que más destacan sus clientes." data-en="Up-to-date prices on WhatsApp. This is a sample of what guests rave about most."></p></div>
+  <div class="menu">
+    <div class="row rv"><div><h3 data-es="Paella de mariscos" data-en="Seafood paella"></h3><p data-es="La que más recomiendan sus clientes." data-en="Guests&#x27; top recommendation."></p></div><div class="pr" data-es="Consultar por WhatsApp" data-en="Ask on WhatsApp"></div></div>
+    <div class="row rv"><div><h3 data-es="Arroz negro con calamares y camarones" data-en="Black squid-ink rice with shrimp"></h3><p data-es="Plato grande y con un sabor increíble." data-en="A big plate with incredible flavor."></p></div><div class="pr" data-es="Consultar por WhatsApp" data-en="Ask on WhatsApp"></div></div>
+    <div class="row rv"><div><h3 data-es="Parrillada de mariscos" data-en="Seafood grill"></h3><p data-es="Para compartir en la mesa." data-en="Made for sharing."></p></div><div class="pr" data-es="Consultar por WhatsApp" data-en="Ask on WhatsApp"></div></div>
+    <div class="row rv"><div><h3 data-es="Cocido, jamones y vino" data-en="Stew, jamón &amp; wine"></h3><p data-es="Lo de siempre en una casa española." data-en="The Spanish classics."></p></div><div class="pr" data-es="Consultar por WhatsApp" data-en="Ask on WhatsApp"></div></div>
+    <div class="row rv"><div><h3 data-es="Bar de postres y Aperol Spritz" data-en="Dessert bar &amp; Aperol Spritz"></h3><p data-es="Para cerrar la comida sin prisa." data-en="To end the meal slowly."></p></div><div class="pr" data-es="Consultar por WhatsApp" data-en="Ask on WhatsApp"></div></div>
+  </div>
+</section>
+
+<section id="opiniones">
+  <div class="rv"><div class="kicker" data-es="Opiniones" data-en="Reviews"></div><h2 data-es="Lo que dicen en Google" data-en="What they say on Google"></h2></div>
+  <div class="quotes">
+    <div class="q rv"><p>"Excelente restaurante para compartir en familia, cumpleaños, con amigos, reuniones y cualquier momento agradable entre todos!. Los platos son deliciosos! Especialmente la paella de mariscos. El personal es muy agradable y servicial! Lo recomiendo 100%."</p><small>Beatriz · Google</small></div>
+    <div class="q rv"><p>"El lugar tiene un ambiente único !!! Muy agradable y acogedor, realmente se siente bien estar allí. Su decoración es clásica española con muchos detalles. Genial para cenar en familia o cerrar un negocio. Su comida muy deliciosa y con un tiempo de espera mínimo. El servicio genial 👍🏻 muy bien atendidos, atención oportuna."</p><small>Sandra · Google</small></div>
+    <div class="q rv"><p>"Exquisito lugar, un ambiente perfecto para disfrutar de una buena comida, un buen vino y tu compañía favorita. Servicio excelente, desde el momento que llegas te hacen sentir cómodo y a gusto. No hay que esperar tanto por la comida permitiéndote disfrutarla al máximo. La comida es muy deliciosa servida de manera impecable, con una presentación que inspira regresar. Pedimos para dos y nos sorprendimos de manera muy positiva a la hora de pagar."</p><small>Himalay · Google</small></div>
+    <div class="q rv"><p>"Este lugar es un clásico. La comida es buena y tiene muchas opciones. La paella y la parrillada de mariscos es de lo mejor que tiene aquí. Su aperol spritz es de los mejores que he probado. Tiene un ambiente bien adulto. Recomendado para reuniones de trabajo, etc."</p><small>Mary Carmen · Google</small></div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="split">
+    <div class="rv"><div class="kicker" data-es="Contacto" data-en="Contact"></div><h2 data-es="Reserva tu mesa" data-en="Book your table"></h2>
+      <div class="info">
+      <div><span class="k" data-es="Dirección" data-en="Address"></span>Av. Simón Bolívar 203, Santo Domingo · <a href="https://www.google.com/maps/place/Boga+Boga/@18.4644206,-69.9250975,17z" target="_blank" rel="noopener" data-es="ver en Google Maps" data-en="view on Google Maps"></a></div>
+      <div><span class="k" data-es="Horario" data-en="Hours"></span><span data-es="Lunes a domingo, 11 a. m. – 11 p. m." data-en="Monday to Sunday, 11 a.m. – 11 p.m."></span></div>
+      <div><span class="k" data-es="Servicio" data-en="Service"></span><span data-es="En el local · para llevar" data-en="Dine-in · takeaway"></span></div>
+      <div><span class="k">WhatsApp</span><a href="https://wa.me/18094720950">+1 809 472 0950</a></div></div></div>
+    <form class="rv" onsubmit="event.preventDefault();location.href='https://wa.me/18094720950?text='+encodeURIComponent(this.n.value+' - '+this.m.value)">
+      <input name="n" required data-ph-es="Tu nombre" data-ph-en="Your name">
+      <textarea name="m" rows="4" required data-ph-es="Para cuántas personas, día, hora y si es una celebración" data-ph-en="How many people, day, time, and whether it&#x27;s a celebration"></textarea>
+      <button class="btn" style="border:0;cursor:pointer" data-es="Enviar por WhatsApp" data-en="Send via WhatsApp"></button>
+    </form>
+  </div>
+</section>
+<footer>© <span id="y"></span> Boga Boga · Santo Domingo</footer>
+<a class="wa" href="https://wa.me/18094720950" aria-label="WhatsApp">✆</a>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+let L='es';function setL(l){L=l;document.documentElement.lang=l;document.querySelectorAll('[data-es]').forEach(e=>e.innerHTML=e.dataset[l]);document.querySelectorAll('[data-ph-es]').forEach(e=>e.placeholder=e.dataset['ph'+l[0].toUpperCase()+l[1]]);document.getElementById('lang').textContent=l==='es'?'EN':'ES'}
+setL(/^es/.test(navigator.language)?'es':'en');document.getElementById('lang').onclick=()=>setL(L==='es'?'en':'es');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,s=[...el.parentElement.children].filter(c=>c.classList.contains('rv'));el.style.transitionDelay=s.indexOf(el)*100+'ms';el.classList.add('on');el.querySelectorAll('[data-count]').forEach(c);io.unobserve(el)}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+function c(b){const t=+b.dataset.count,d=+b.dataset.dec||0,sep=b.dataset.sep,s=performance.now();(function f(n){const p=Math.min((n-s)/1400,1);let v=(t*(1-Math.pow(1-p,3))).toFixed(d);v=sep?(+v).toLocaleString('es-DO'):v.replace('.',',');b.textContent=v;if(p<1)requestAnimationFrame(f)})(s)}
+const px=document.querySelectorAll('[data-px]');addEventListener('scroll',()=>px.forEach(o=>o.style.transform=`translateY(${scrollY*o.dataset.px}px)`),{passive:true});
+</script>
+</body>
+</html>

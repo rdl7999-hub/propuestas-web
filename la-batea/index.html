@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>La Batea · Comida criolla en Bávaro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbfaf3;--bg2:#eef3e4;--ink:#22301f;--soft:#5f6e58;--green:#2e7d4f;--deep:#1c5235;--mango:#f3a712;--tomato:#e4572e;--line:rgba(34,48,31,.12)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',sans-serif;font-weight:300;background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:var(--green)}
+.demo{background:var(--deep);color:#fbfaf3;text-align:center;font-size:.8rem;padding:.45rem 1rem;font-weight:700;letter-spacing:.02em}
+nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:1rem 6vw;background:rgba(251,250,243,.84);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{font-family:'Bricolage Grotesque';font-size:1.5rem;font-weight:800;letter-spacing:-.01em}.logo b{color:var(--mango);font-weight:800}
+nav ul{display:flex;gap:2rem;list-style:none}nav a{color:var(--soft);text-decoration:none;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}nav a:hover{color:var(--green)}
+.lang{background:none;border:1px solid var(--line);color:var(--ink);padding:.35rem .9rem;border-radius:999px;cursor:pointer;font:inherit;font-size:.8rem}
+@media(max-width:760px){nav ul{display:none}}
+.hero{min-height:92vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;padding:4rem 6vw;background:radial-gradient(120% 90% at 50% 0%,#e3efcf 0%,var(--bg) 58%)}
+.veg{position:absolute;font-size:5rem;opacity:.14}
+.v1{top:13%;left:9vw}.v2{bottom:15%;right:9vw}.v3{top:24%;right:17vw;font-size:3.2rem}
+.hero .in{position:relative;max-width:800px}
+.kicker{color:var(--tomato);letter-spacing:.34em;text-transform:uppercase;font-size:.72rem;font-weight:700}
+h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(3rem,10vw,6.4rem);line-height:.95;letter-spacing:-.02em;margin:1rem 0}
+h1 em{font-style:normal;font-weight:500;font-size:.38em;color:var(--green);display:block;letter-spacing:0;line-height:1.3;margin-top:.7rem}
+.hero p{color:var(--soft);max-width:560px;margin:0 auto 2.2rem;font-size:1.12rem}
+.btn{display:inline-block;background:var(--green);color:#fff;padding:1rem 2.2rem;text-decoration:none;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.84rem;border-radius:12px;transition:.3s}
+.btn:hover{background:var(--deep);transform:translateY(-3px);box-shadow:0 14px 30px rgba(46,125,79,.3)}
+.rate{margin-top:2rem;color:var(--soft)}.rate b{color:var(--mango)}
+section{padding:6.5rem 6vw;max-width:1180px;margin:0 auto}
+h2{font-family:'Bricolage Grotesque';font-weight:700;font-size:clamp(2.2rem,6vw,4rem);line-height:1;letter-spacing:-.02em;margin:.6rem 0 1.4rem}
+.lead{color:var(--soft);max-width:640px;font-size:1.06rem}
+.split{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center}@media(max-width:820px){.split{grid-template-columns:1fr}}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.stat{background:var(--bg2);padding:2rem;text-align:center}.stat b{font-family:'Bricolage Grotesque';font-weight:800;font-size:3.2rem;color:var(--green);display:block;line-height:1}.stat span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.menu{margin-top:3rem;border-top:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1.6rem 0;border-bottom:1px solid var(--line);transition:.35s}
+.row:hover{padding-left:1rem;color:var(--green)}
+.row h3{font-family:'Bricolage Grotesque';font-weight:700;font-size:1.45rem}.row p{color:var(--soft);font-size:.95rem}
+.row .pr{font-family:'Bricolage Grotesque';font-weight:500;font-size:1.1rem;color:var(--tomato);white-space:nowrap}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:3rem}
+.q{background:var(--bg2);border-left:3px solid var(--mango);padding:1.8rem;border-radius:0 14px 14px 0;transition:.35s}.q:hover{transform:translateY(-6px)}
+.q p{font-family:'Nunito Sans';font-style:italic;font-weight:600;font-size:1.04rem;line-height:1.5}.q small{display:block;margin-top:1rem;color:var(--green);letter-spacing:.14em;font-size:.72rem;text-transform:uppercase}
+.info div{padding:1.2rem 0;border-bottom:1px solid var(--line)}.info span{display:block;color:var(--green);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase}
+.info a{color:inherit}
+form{display:grid;gap:1rem}input,textarea{font:inherit;color:var(--ink);background:var(--bg2);border:1px solid var(--line);padding:1rem 1.2rem;border-radius:10px}
+footer{text-align:center;color:var(--soft);padding:3rem;border-top:1px solid var(--line);font-size:.85rem}
+.wa{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:1.6rem;text-decoration:none;z-index:30;box-shadow:0 10px 25px rgba(0,0,0,.25)}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div class="demo" data-es="Propuesta de diseño · demo preparada para La Batea" data-en="Design proposal · demo prepared for La Batea"></div>
+<nav><div class="logo">La <b>Batea</b></div>
+<ul><li><a href="#lugar" data-es="El lugar" data-en="The place"></a></li><li><a href="#carta" data-es="La cocina" data-en="The food"></a></li><li><a href="#opiniones" data-es="Opiniones" data-en="Reviews"></a></li><li><a href="#contacto" data-es="Contacto" data-en="Contact"></a></li></ul>
+<button class="lang" id="lang">EN</button></nav>
+
+<header class="hero">
+  <div class="veg v1" data-px=".28">🍲</div><div class="veg v2" data-px="-.22">🥭</div><div class="veg v3" data-px=".18">🍚</div>
+  <div class="in rv">
+    <div class="kicker" data-es="Comida criolla y casera · Bávaro" data-en="Dominican home cooking · Bávaro"></div>
+    <h1>La Batea<em data-es="comida típica dominicana, en tiempo récord y con ambiente familiar" data-en="typical Dominican food, served fast and with a family vibe"></em></h1>
+    <p data-es="El sitio para comer rico y casero en Bávaro sin gastar de más: plato del día, comida criolla y buena atención. Calidad, precio y trato, como dicen sus clientes." data-en="The spot for tasty, home-style food in Bávaro without overspending: daily specials, criollo cooking and great service. Quality, price and warmth, just like the reviews say."></p>
+    <a class="btn" href="https://wa.me/18092246139" data-es="Pedir por WhatsApp" data-en="Order on WhatsApp"></a>
+    <div class="rate"><b>★ 4,7</b> · <span data-es="92 reseñas en Google" data-en="92 Google reviews"></span></div>
+  </div>
+</header>
+
+<section id="lugar">
+  <div class="split">
+    <div class="rv"><div class="kicker" data-es="El lugar" data-en="The place"></div>
+      <h2 data-es="Comida de verdad,<br>sin complicaciones" data-en="Real food,<br>no fuss"></h2>
+      <p class="lead" data-es="La Batea es comida típica dominicana y casera: platos generosos, servicio rápido y un ambiente familiar donde se pasa un rato agradable. Buena relación calidad-precio y una atención que repiten sus clientes. Escríbenos por WhatsApp para pedir o reservar." data-en="La Batea is typical Dominican home cooking: generous plates, fast service and a family atmosphere where you have a good time. Great value and service that keeps guests coming back. Message us on WhatsApp to order or book."></p></div>
+    <div class="stats rv">
+      <div class="stat"><b data-count="4.7" data-dec="1">0</b><span data-es="Nota Google" data-en="Google rating"></span></div>
+      <div class="stat"><b data-count="92">0</b><span data-es="Reseñas" data-en="Reviews"></span></div>
+      <div class="stat"><b>ES · EN</b><span data-es="Atención" data-en="We speak"></span></div>
+      <div class="stat"><b data-es="Plato<br>del día" data-en="Daily<br>special">Plato<br>del día</b><span data-es="A diario" data-en="Every day"></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="carta">
+  <div class="rv"><div class="kicker" data-es="La cocina" data-en="The food"></div><h2 data-es="Qué se come" data-en="What's cooking"></h2>
+  <p class="lead" data-es="Precios actualizados por WhatsApp. Esto es una muestra de lo que destacan sus clientes." data-en="Up-to-date prices on WhatsApp. This is a sample of what guests highlight."></p></div>
+  <div class="menu">
+    <div class="row rv"><div><h3 data-es="Plato del día" data-en="Daily special"></h3><p data-es="Comida criolla cuidada, lista en tiempo récord." data-en="Careful criollo cooking, ready in record time."></p></div><div class="pr" data-es="Consultar por WhatsApp" data-en="Ask on WhatsApp"></div></div>
+    <div class="row rv"><div><h3 data-es="Comida casera dominicana" data-en="Dominican home cooking"></h3><p data-es="Rica, local y con buenos precios." data-en="Tasty, local and well priced."></p></div><div class="pr" data-es="Consultar por WhatsApp" data-en="Ask on WhatsApp"></div></div>
+    <div class="row rv"><div><h3 data-es="Fritos y acompañantes" data-en="Fritters & sides"></h3><p data-es="Para compartir y picar algo rico." data-en="To share and snack on something good."></p></div><div class="pr" data-es="Consultar por WhatsApp" data-en="Ask on WhatsApp"></div></div>
+  </div>
+</section>
+
+<section id="opiniones">
+  <div class="rv"><div class="kicker" data-es="Opiniones" data-en="Reviews"></div><h2 data-es="Lo que dicen en Google" data-en="What they say on Google"></h2></div>
+  <div class="quotes">
+    <div class="q rv"><p>"El mejor lugar en cuanto a calidad, precio y atención al cliente."</p><small>Yonald · Google</small></div>
+    <div class="q rv"><p>"Excelente todo... la comida es perfecta, riquísima, y el personal es súper!!!"</p><small>Andrea · Google</small></div>
+    <div class="q rv"><p>"Excelente comida típica dominicana! Servicio en tiempo récord y ambiente familiar. Lo recomiendo 100% para visitarlo y pasar un rato agradable."</p><small>Jackie · Google</small></div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="split">
+    <div class="rv"><div class="kicker" data-es="Contacto" data-en="Contact"></div><h2 data-es="Pásate a comer" data-en="Come eat"></h2>
+      <div class="info">
+      <div><span data-es="Dirección" data-en="Address"></span>Avenida Papo Abeja · Punta Cana 23000 · <a href="https://www.google.com/maps/place/La+batea/@18.6730604,-68.4413105,17z" target="_blank" rel="noopener" data-es="ver en Google Maps" data-en="view on Google Maps"></a></div>
+      <div><span data-es="Horario" data-en="Hours"></span><span style="display:inline;color:inherit;letter-spacing:0;text-transform:none;font-size:inherit" data-es="Consúltalo por WhatsApp" data-en="Ask on WhatsApp"></span></div>
+      <div><span>WhatsApp</span><a href="https://wa.me/18092246139">+1 809 224 6139</a></div></div></div>
+    <form class="rv" onsubmit="event.preventDefault();location.href='https://wa.me/18092246139?text='+encodeURIComponent(this.n.value+' - '+this.m.value)">
+      <input name="n" required data-ph-es="Tu nombre" data-ph-en="Your name">
+      <textarea name="m" rows="4" required data-ph-es="Para cuántas personas, día y hora" data-ph-en="How many people, day and time"></textarea>
+      <button class="btn" style="border:0;cursor:pointer" data-es="Enviar por WhatsApp" data-en="Send via WhatsApp"></button>
+    </form>
+  </div>
+</section>
+<footer>© <span id="y"></span> La Batea · Bávaro, Punta Cana</footer>
+<a class="wa" href="https://wa.me/18092246139" aria-label="WhatsApp">✆</a>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+let L='es';function setL(l){L=l;document.documentElement.lang=l;document.querySelectorAll('[data-es]').forEach(e=>e.innerHTML=e.dataset[l]);document.querySelectorAll('[data-ph-es]').forEach(e=>e.placeholder=e.dataset['ph'+l[0].toUpperCase()+l[1]]);document.getElementById('lang').textContent=l==='es'?'EN':'ES'}
+setL(/^es/.test(navigator.language)?'es':'en');document.getElementById('lang').onclick=()=>setL(L==='es'?'en':'es');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,s=[...el.parentElement.children].filter(c=>c.classList.contains('rv'));el.style.transitionDelay=s.indexOf(el)*100+'ms';el.classList.add('on');el.querySelectorAll('[data-count]').forEach(c);io.unobserve(el)}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+function c(b){const t=+b.dataset.count,d=+b.dataset.dec||0,u=b.dataset.suf||'',s=performance.now();(function f(n){const p=Math.min((n-s)/1400,1);b.textContent=(t*(1-Math.pow(1-p,3))).toFixed(d).replace('.',',')+(p===1?u:'');if(p<1)requestAnimationFrame(f)})(s)}
+const px=document.querySelectorAll('[data-px]');addEventListener('scroll',()=>px.forEach(o=>o.style.transform=`translateY(${scrollY*o.dataset.px}px)`),{passive:true});
+</script>
+</body>
+</html>
